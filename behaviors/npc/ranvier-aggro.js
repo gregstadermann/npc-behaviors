@@ -78,7 +78,7 @@ module.exports = {
           if (!this._aggroTarget.isNpc) {
             B.sayAt(this._aggroTarget, config.attackMessage.replace(/%name%/, this.name));
           } else {
-            Logger.verbose(`NPC [${this.uuid}/${this.entityReference}] attacks NPC [${this._aggroTarget.uuid}/${this._aggroTarget.entityReference}] in room ${this.room.entityReference}.`);
+            Logger.verbose(`\tNPC [${this.uuid}/${this.entityReference}] attacks NPC [${this._aggroTarget.uuid}/${this._aggroTarget.entityReference}] in room ${this.room.entityReference}.`);
           }
           this.initiateCombat(this._aggroTarget);
           this._aggroTarget = null;
