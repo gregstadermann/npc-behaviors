@@ -50,7 +50,7 @@ module.exports = {
       if (randomRoom && door && (door.locked || door.closed)) {
         // maybe a possible feature where it could be configured that they can open doors
         // or even if they have the key they can unlock the doors
-        Logger.verbose(`\tNPC [${this.uuid}] wander blocked by door.`);
+        // Logger.verbose(`\tNPC [${this.uuid}] wander blocked by door.`);
         return;
       }
 
@@ -62,7 +62,7 @@ module.exports = {
         return;
       }
 
-      Logger.verbose(`\tNPC [${this.uuid}] ${this.name} wandering from ${this.room.entityReference} to ${randomRoom.entityReference}.`);
+      // Logger.verbose(`\tNPC [${this.uuid}] ${this.name} wandering from ${this.room.entityReference} to ${randomRoom.entityReference}.`);
       Broadcast.sayAt(this.room, `${this.name} wanders ${roomExit.direction}.`);
       this.moveTo(randomRoom);
     }
