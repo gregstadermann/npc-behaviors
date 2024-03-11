@@ -1,6 +1,7 @@
 'use strict';
 
 const { Broadcast: B, Logger } = require('ranvier');
+const Combat = require('../../../combat/lib/Combat');
 
 /**
  * A simple behavior to make an NPC aggressive. Aggressive is defined as attacking after some delay
@@ -81,6 +82,10 @@ module.exports = {
             Logger.verbose(`\tNPC [${this.uuid}/${this.entityReference}] attacks NPC [${this._aggroTarget.uuid}/${this._aggroTarget.entityReference}] in room ${this.room.entityReference}.`);
           }
           this.initiateCombat(this._aggroTarget);
+
+          // Uncomment the following line to make the NPC attack the player
+          // let lag = Combat.makeAttack(this, this._aggroTarget, state);
+
           this._aggroTarget = null;
           this._aggroWarned = false;
           return;
